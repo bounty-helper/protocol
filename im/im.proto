@@ -1,0 +1,23 @@
+syntax = "proto3";
+package im;
+option go_package = "github.com/bounty-helper/protocol/im";
+
+message OfflinePushMsgReq {
+  repeated string userIDs = 1;
+  OfflinePushMsgData msgData = 2;
+}
+
+message OfflinePushMsgResp {
+}
+
+message OfflinePushMsgData {
+  string title = 1;
+  string content = 2;
+  string useIOSPushSound = 3;
+  bool showBadgeCount = 4;
+  string ex = 5;
+}
+
+service ImService {
+  rpc OfflinePushMsg(OfflinePushMsgReq) returns (OfflinePushMsgResp);
+}

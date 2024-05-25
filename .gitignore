@@ -1,0 +1,50 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin
+testbin/*
+
+# Test binary, build with `go test -c`
+*.test
+
+# Output of the go coverage tool, specifically when used with LiteIDE
+*.out
+
+# Kubernetes Generated files - skip generated files, except for vendored files
+
+!vendor/**/zz_generated.*
+
+# editor and IDE paraphernalia
+.vscode
+.idea
+.run
+*.swp
+*.swo
+*~
+
+# Go output
+*.cov
+
+# Local files
+.local/
+.test/
+
+# Build output
+build/
+dist/
+
+output
+output/
+
+# Logs
+log/
+
+# All Config. Whitelist examples
+config/
+!config/*.example.json
+
+# local s3 testing folder
+data/
