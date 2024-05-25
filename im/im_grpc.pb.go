@@ -47,21 +47,19 @@ func (c *imServiceClient) OfflinePushMsg(ctx context.Context, in *OfflinePushMsg
 }
 
 // ImServiceServer is the server API for ImService service.
-// All implementations must embed UnimplementedImServiceServer
+// All implementations should embed UnimplementedImServiceServer
 // for forward compatibility
 type ImServiceServer interface {
 	OfflinePushMsg(context.Context, *OfflinePushMsgReq) (*OfflinePushMsgResp, error)
-	mustEmbedUnimplementedImServiceServer()
 }
 
-// UnimplementedImServiceServer must be embedded to have forward compatible implementations.
+// UnimplementedImServiceServer should be embedded to have forward compatible implementations.
 type UnimplementedImServiceServer struct {
 }
 
 func (UnimplementedImServiceServer) OfflinePushMsg(context.Context, *OfflinePushMsgReq) (*OfflinePushMsgResp, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method OfflinePushMsg not implemented")
 }
-func (UnimplementedImServiceServer) mustEmbedUnimplementedImServiceServer() {}
 
 // UnsafeImServiceServer may be embedded to opt out of forward compatibility for this service.
 // Use of this interface is not recommended, as added methods to ImServiceServer will
